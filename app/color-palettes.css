@@ -1,0 +1,79 @@
+/* Default palette variables */
+:root {
+  --color-primary: #0ea5e9;
+  --color-secondary: #f97316;
+  --color-accent: #8b5cf6;
+}
+
+/* Apply palette colors to theme variables */
+:root {
+  --primary: var(--color-primary);
+  --secondary: var(--color-secondary);
+  --accent: var(--color-accent);
+}
+
+/* Forest palette */
+[data-color-palette="forest"] {
+  --color-primary: #10b981;
+  --color-secondary: #84cc16;
+  --color-accent: #059669;
+}
+
+/* Sunset palette */
+[data-color-palette="sunset"] {
+  --color-primary: #f43f5e;
+  --color-secondary: #f97316;
+  --color-accent: #8b5cf6;
+}
+
+/* Ocean palette */
+[data-color-palette="ocean"] {
+  --color-primary: #0ea5e9;
+  --color-secondary: #06b6d4;
+  --color-accent: #3b82f6;
+}
+
+/* Monochrome palette */
+[data-color-palette="monochrome"] {
+  --color-primary: #525252;
+  --color-secondary: #737373;
+  --color-accent: #404040;
+}
+
+/* Vibrant palette */
+[data-color-palette="vibrant"] {
+  --color-primary: #8b5cf6;
+  --color-secondary: #ec4899;
+  --color-accent: #f43f5e;
+}
+
+/* Time-based color themes */
+[data-color-theme="blue"] {
+  --color-primary: #3b82f6;
+  --color-secondary: #0ea5e9;
+  --color-accent: #2563eb;
+}
+
+[data-color-theme="green"] {
+  --color-primary: #10b981;
+  --color-secondary: #84cc16;
+  --color-accent: #059669;
+}
+
+[data-color-theme="purple"] {
+  --color-primary: #8b5cf6;
+  --color-secondary: #a855f7;
+  --color-accent: #7c3aed;
+}
+
+[data-color-theme="orange"] {
+  --color-primary: #f97316;
+  --color-secondary: #fb923c;
+  --color-accent: #ea580c;
+}
+
+[data-color-theme="pink"] {
+  --color-primary: #ec4899;
+  --color-secondary: #f472b6;
+  --color-accent: #db2777;
+}
