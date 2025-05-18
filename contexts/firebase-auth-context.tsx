@@ -18,7 +18,6 @@ import {
 import { auth, isFirebaseConfigured } from "@/lib/firebase/firebase"
 import { getDoc, doc } from "firebase/firestore"
 import { db } from "@/lib/firebase/firebase"
-import { FirebaseStorage } from "firebase/storage"
 
 interface FirebaseAuthContextType {
   user: User | null
@@ -39,8 +38,6 @@ export function FirebaseAuthProvider({ children }: { children: React.ReactNode }
   const [user, setUser] = useState<User | null>(null)
   const [loading, setLoading] = useState(true)
   const [isConfigured, setIsConfigured] = useState(false)
-
-  // <false | FirebaseStorage>
 
   useEffect(() => {
     // Check if Firebase is configured
@@ -71,10 +68,12 @@ export function FirebaseAuthProvider({ children }: { children: React.ReactNode }
 
   // Sync user theme preferences after login
   const syncUserThemePreferences = async (user: User) => {
-    if (!isConfigured) return
+    if (!isConfigured || !user || !user.uid) return;
 
     try {
+      console.log("Lets get the user doc")
       const userDoc = await getDoc(doc(db, "users", user.uid))
+      console.log("User", {userDoc, db, user})
       if (userDoc.exists()) {
         const userData = userDoc.data()
         if (userData.themePreferences) {
@@ -94,8 +93,10 @@ export function FirebaseAuthProvider({ children }: { children: React.ReactNode }
     if (!isConfigured) {
       throw new Error("Firebase not configured")
     }
+    console.log("credentials",{email, password})
     const userCredential = await signInWithEmailAndPassword(auth, email, password)
     await syncUserThemePreferences(userCredential.user)
+    console.log("returned user", userCredential.user);
     return userCredential.user
   }
 

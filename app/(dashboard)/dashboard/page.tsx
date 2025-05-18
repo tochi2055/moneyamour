@@ -1,11 +1,11 @@
-import { AccountsOverview } from "@/components/accounts-overview"
-import { RecentTransactions } from "@/components/recent-transactions"
-import { QuickActions } from "@/components/quick-actions"
-import { FinancialChart } from "@/components/financial-chart"
-import { BudgetTracker } from "@/components/budget-tracker"
-import { SavingsGoals } from "@/components/savings-goals"
-import { QuickBillPay } from "@/components/quick-bill-pay"
-import { BusinessMetrics } from "@/components/business-metrics"
+import { AccountsOverview } from "@/components/accounts-overview";
+import { RecentTransactions } from "@/components/recent-transactions";
+import { QuickActions } from "@/components/quick-actions";
+import { FinancialChart } from "@/components/financial-chart";
+import { BudgetTracker } from "@/components/budget-tracker";
+import { SavingsGoals } from "@/components/savings-goals";
+import { QuickBillPay } from "@/components/quick-bill-pay";
+import { BusinessMetrics } from "@/components/business-metrics";
 
 export default function Home() {
   return (
@@ -25,5 +25,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  )
+  );
 }

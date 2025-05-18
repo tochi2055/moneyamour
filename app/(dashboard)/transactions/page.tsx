@@ -176,7 +176,7 @@ export default function TransactionsPage() {
     setIsAddTransactionOpen(false)
   }
 
-  const getStatusColor = (status) => {
+  const getStatusColor = (status: string) => {
     switch (status) {
       case "Completed":
         return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200"
