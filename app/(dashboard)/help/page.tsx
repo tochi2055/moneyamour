@@ -1,11 +1,17 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Search, MessageSquare, FileText, Video } from "lucide-react"
-import { toast } from "sonner"
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Search, MessageSquare, FileText, Video } from "lucide-react";
+import { toast } from "sonner";
 
 const faqs = [
   {
@@ -48,12 +54,13 @@ const faqs = [
     answer:
       "To export your data, go to Settings > Data Management and click 'Export Data'. Select the data you want to export (transactions, accounts, budgets, etc.) and the format (CSV, PDF, Excel). Click 'Export' and the file will be downloaded to your device.",
   },
-]
+];
 
 const tutorials = [
   {
     title: "Getting Started with MoneyAmour",
-    description: "Learn the basics of using MoneyAmour to manage your finances.",
+    description:
+      "Learn the basics of using MoneyAmour to manage your finances.",
     type: "video",
     duration: "5 min",
     link: "#",
@@ -67,7 +74,8 @@ const tutorials = [
   },
   {
     title: "Advanced Reporting Features",
-    description: "Discover how to use our advanced reporting tools for deeper financial insights.",
+    description:
+      "Discover how to use our advanced reporting tools for deeper financial insights.",
     type: "video",
     duration: "12 min",
     link: "#",
@@ -93,45 +101,47 @@ const tutorials = [
     duration: "12 min read",
     link: "#",
   },
-]
+];
 
 export default function HelpPage() {
-  const [searchQuery, setSearchQuery] = useState("")
+  const [searchQuery, setSearchQuery] = useState("");
   const [contactForm, setContactForm] = useState({
     name: "",
     email: "",
     subject: "",
     message: "",
-  })
+  });
 
   const filteredFaqs = faqs.filter(
     (faq) =>
       faq.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       faq.answer.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  );
 
   const filteredTutorials = tutorials.filter(
     (tutorial) =>
       tutorial.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       tutorial.description.toLowerCase().includes(searchQuery.toLowerCase())
-  )
+  );
 
-  const handleContactSubmit = (e) => {
-    e.preventDefault()
-    toast.success("Your message has been sent! We'll get back to you soon.")
+  const handleContactSubmit = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    toast.success("Your message has been sent! We'll get back to you soon.");
     setContactForm({
       name: "",
       email: "",
       subject: "",
       message: "",
-    })
-  }
+    });
+  };
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Help Center</h1>
-        <p className="text-muted-foreground">Find answers, tutorials, and support for MoneyAmour.</p>
+        <p className="text-muted-foreground">
+          Find answers, tutorials, and support for MoneyAmour.
+        </p>
       </div>
 
       <div className="relative">
@@ -149,7 +159,9 @@ export default function HelpPage() {
         <Card className="md:col-span-3">
           <CardHeader>
             <CardTitle>Quick Help</CardTitle>
-            <CardDescription>Common topics to help you get started</CardDescription>
+            <CardDescription>
+              Common topics to help you get started
+            </CardDescription>
           </CardHeader>
           <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <Button variant="outline" className="h-auto p-4 justify-start">
@@ -158,7 +170,9 @@ export default function HelpPage() {
                   <MessageSquare className="h-5 w-5 mr-2" />
                   <span className="font-medium">Account Setup</span>
                 </div>
-                <span className="text-sm text-muted-foreground">Learn how to set up and manage your accounts</span>
+                <span className="text-sm text-muted-foreground">
+                  Learn how to set up and manage your accounts
+                </span>
               </div>
             </Button>
             <Button variant="outline" className="h-auto p-4 justify-start">
@@ -167,7 +181,9 @@ export default function HelpPage() {
                   <FileText className="h-5 w-5 mr-2" />
                   <span className="font-medium">Transactions</span>
                 </div>
-                <span className="text-sm text-muted-foreground">Track and categorize your financial transactions</span>
+                <span className="text-sm text-muted-foreground">
+                  Track and categorize your financial transactions
+                </span>
               </div>
             </Button>
             <Button variant="outline" className="h-auto p-4 justify-start">
@@ -176,9 +192,19 @@ export default function HelpPage() {
                   <Video className="h-5 w-5 mr-2" />
                   <span className="font-medium">Reporting</span>
                 </div>
-                <span className="text-sm text-muted-foreground">Generate and analyze financial reports</span>
+                <span className="text-sm text-muted-foreground">
+                  Generate and analyze financial reports
+                </span>
               </div>
-
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}
+{
+  /* 
 I've created a comprehensive enhancement of the MoneyAmour financial dashboard with fully functional navigation and interactive components. Here's what I've implemented:
 
 1. **Improved Sidebar Navigation**:
@@ -212,4 +238,5 @@ I've created a comprehensive enhancement of the MoneyAmour financial dashboard w
 All interactive buttons now trigger appropriate actions, and the application maintains a consistent user experience across all pages with proper navigation between them.
 \
 \
-\
+\ */
+}
