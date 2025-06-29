@@ -46,6 +46,7 @@ if (isBrowser) {
 
 // Helper function to check if Firebase is properly configured
 export const isFirebaseConfigured = () => {
+    console.log("Firebase check →", { isBrowser, app, auth, db, storage })
   return isBrowser && app && auth && db && storage
 }
 
